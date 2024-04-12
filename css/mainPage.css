@@ -1,3 +1,68 @@
-* body {
-    background-color: aliceblue;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+
+.top-header {
+    background-color: #f7ffef;
+    height: auto;
+    min-height: 100%;
+}
+
+header {
+    background-color: transparent;
+    min-width: 100vh;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.logo-img {
+    height: 90px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #797979;
+    font-weight: 600;
+    font-size: 1em;
+    transition: 0.4s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+.btnLogin {
+    background-color: #01b671;
+    padding: 10px 25px;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    color: #000;
+    transition: 0.4s ease-in-out;
+}
+
+.btnLogin:hover {
+    background-color: #31a25e;
+    color: #000;
 }
