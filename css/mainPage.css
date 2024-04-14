@@ -53,7 +53,7 @@ nav ul li a:hover {
     color: #000;
 }
 
-.btnLogin {
+.btn {
     background-color: #01b671;
     padding: 10px 25px;
     border-radius: 1.5rem;
@@ -65,4 +65,55 @@ nav ul li a:hover {
 .btnLogin:hover {
     background-color: #31a25e;
     color: #000;
+}
+
+/* Main */
+
+.inicio {
+    min-width: 100vh;
+}
+
+.contenedorInicio {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 40px 10ppx;
+}
+
+.contenedorIqz {
+    margin-left: 50px;
+    padding: 50px 0;
+}
+
+.ingresar {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.subtituloI {
+    color: #826147;
+    margin-bottom: 1rem;
+    font-weight: 550;
+}
+
+.contenedorIqz h1 {
+    font-size: 2.5em;
+    margin-bottom: 1.5rem;
+    line-height: 45px;
+}
+
+.imgInicio {
+    width: 500px;
+    margin: 3rem;
+}
+
+.parrafoI {
+    font-size: 1.2em;
+    margin-bottom: 2rem;
+}
+
+span {
+    color: #01b671;
 }
