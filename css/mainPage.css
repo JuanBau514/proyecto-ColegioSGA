@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: #f7ffef;
     box-sizing: border-box;
 }
 
@@ -116,4 +117,131 @@ nav ul li a:hover {
 
 span {
     color: #01b671;
+}
+
+/*Seccion de caracteristicas */
+
+.academia {
+    background-color: #f7ffef;
+    padding: 0px 100px;
+    display: flex;
+    height: 50vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cajaC {
+    padding: 20px 40px;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.cajaC:hover {
+    box-shadow: 0px 5px 15px #7f7f7f;
+    cursor: pointer;
+}
+
+.cajaC h2 {
+    font-size: 1.5em;
+    color: #826147;
+    margin: 5px 0;
+}
+
+.cajaC p {
+    color: #7f7f7f;
+}
+
+.Sombra {
+    box-shadow: 0px 5px 15px #7f7f7f;
+}
+
+/*Seccion galeria*/
+
+.galeria {
+    padding: 0 0 100px 0;
+}
+
+.tituloGal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+    font-size: 1.5em;
+    color: #01b671;
+}
+
+.content-galeria {
+    background-color: #f7ffef;
+    height: auto;
+    padding: 10px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-galeria img {
+    width: 300px;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+}
+
+.left-fecha img {
+    width: 10%;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+}
+
+.caja-galeria {
+    background-color: white;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 5px #7f7f7f, -2px -2px 5px #7f7f7f;
+    transition: 0.3s ease-in-out;
+}
+
+
+.caja-galeria:hover {
+    box-shadow: 0px 5px 15px #7f7f7f;
+    cursor: pointer;
+}
+
+.caja-galeria h2 {
+    font-size: 1 rem;
+    color: #826147;
+    margin: 5px 0;
+}
+
+.caja-galeria p {
+    color: #7f7f7f;
+    margin: 5px 0;
+}
+
+.link-btn {
+    font-size: 1rem;
+    color: white;
+    padding: 8px 20px;
+    margin: 7px 0;
+}
+
+.btn-galeria {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 35px 0 0 0;
+}
+
+.left-fecha {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 0px;
 }
