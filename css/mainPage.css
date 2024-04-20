@@ -245,3 +245,126 @@ span {
     position: relative;
     right: 0px;
 }
+
+.right-fecha {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 30px;
+}
+
+.right-fecha img {
+    width: 30%;
+    border-radius: 0.5rem;
+}
+
+.left-fecha p .right-fecha p {
+    font-size: 1rem;
+    margin-left: 5px;
+}
+
+/*Seccion de contacto*/
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    padding-bottom: 3rem;
+}
+
+.titulo-contacto {
+    font-size: 1.5em;
+    color: #01b671;
+    padding-bottom: 0.5rem;
+}
+
+.box-contacto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 4rem;
+}
+
+.box-contacto img {
+    width: 50px;
+    margin-right: 1rem;
+}
+
+.box-contacto p {
+    font-size: 1rem;
+    color: #7f7f7f;
+}
+
+/* Footer */
+
+footer {
+    height: 20vh;
+    background-color: #282432;
+}
+
+.footer-box {
+    background-color: #282432;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-content {
+    display: flex;
+    background-color: #282432;
+    flex-direction: column;
+    padding: 0.5rem 1.2rem;
+}
+
+.footer-content h3 {
+    background-color: #282432;
+    font-size: 1em;
+    color: #01b671;
+    margin-bottom: 0.5rem;
+    margin-right: 4rem;
+}
+
+.footer-content p {
+    background-color: #282432;
+    font-size: 1rem;
+    color: wheat;
+    margin-bottom: 0.5rem;
+}
+
+.footer-content a {
+    background-color: #282432;
+    text-decoration: none;
+    color: wheat;
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.footer-about {
+    background-color: #282432;
+    color: wheat;
+    width: 40%;
+    margin-left: 120px;
+}
+
+.footer-about h3 {
+    background-color: #282432;
+    font-size: 1.5em;
+    color: #01b671;
+    margin-bottom: 0.5rem;
+}
+
+.footer-about a {
+    background-color: #282432;
+    text-decoration: none;
+    color: wheat;
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.footer-about a:hover {
+    color: #01b671;
+}
