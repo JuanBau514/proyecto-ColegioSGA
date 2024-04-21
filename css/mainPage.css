@@ -169,7 +169,12 @@ span {
 /*Seccion galeria*/
 
 .galeria {
-    padding: 0 0 100px 0;
+    background-color: #f7ffef;
+    padding: 10vh 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .tituloGal {
@@ -183,11 +188,21 @@ span {
 
 .content-galeria {
     background-color: #f7ffef;
-    height: auto;
-    padding: 10px 10%;
+    padding: 5% 2%;
     display: flex;
-    align-items: center;
+    align-items: content;
     justify-content: space-around;
+}
+
+.caja-galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 5px #7f7f7f, -2px -2px 5px #7f7f7f;
+    transition: 0.3s ease-in-out;
+    margin-right: 3rem;
 }
 
 .content-galeria img {
@@ -214,7 +229,6 @@ span {
     transition: 0.3s ease-in-out;
 }
 
-
 .caja-galeria:hover {
     box-shadow: 0px 5px 15px #7f7f7f;
     cursor: pointer;
@@ -240,6 +254,7 @@ span {
 
 .btn-galeria {
     display: flex;
+    background-color: #f7ffef;
     align-items: center;
     justify-content: space-between;
     margin: 35px 0 0 0;
@@ -249,25 +264,30 @@ span {
     display: flex;
     align-items: center;
     position: relative;
-    right: 0px;
+    background-color: #f7ffef;
 }
 
 .right-fecha {
+    background-color: #f7ffef;
     display: flex;
     align-items: center;
     position: relative;
-    left: 30px;
+    right: 3rem;
 }
 
 .right-fecha img {
-    width: 30%;
+    background-color: #f7ffef;
+    width: 50%;
     border-radius: 0.5rem;
 }
 
-.left-fecha p .right-fecha p {
+.left-fecha img p .right-fecha p {
+    background-color: #f7ffef;
     font-size: 1rem;
     margin-left: 5px;
 }
+
+
 
 /*Seccion de contacto*/
 
