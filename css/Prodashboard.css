@@ -29,7 +29,7 @@
     top: 0;
     height: 100%;
     padding: 1rem 1.5rem;
-    background-color: #471111;
+    background-color: var(--color-main);
     color: #fff;
     overflow-y: auto;
 }
@@ -158,7 +158,7 @@ main {
 .page-header {
     display: flex;
     justify-content: space-between;
-    margin: 35px auto 0 auto;
+    margin: 35px 0 0 0;
 }
 
 .header-actions button {
@@ -228,26 +228,4 @@ main {
 
 .card-chart.danger span {
     color: #ff0000;
-}
-
-.boton {
-    background-color: #501313; 
-    border: none;
-    color: white;
-    padding: 10px 28px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
-}
-
-.boton:hover {
-    background-color: #b65656;
-}
-
-.centrado {
-    text-align: center; 
 }

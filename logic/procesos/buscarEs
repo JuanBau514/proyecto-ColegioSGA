@@ -1,0 +1,39 @@
+<?php
+include("../../logic/estudiante/crud_e.php");
+include("../../config/db.php");
+session_start();
+$db = new DataBase();
+$crud_e = new Crud_e($db->connect());
+
+if (isset($_GET['estudiante'])) {
+    // Obtener el valor del parámetro 'email' y decodificarlo si es necesario
+    $email = urldecode($_GET['estudiante']);
+    $estudiante = $crud_e->obtenerEstudiante($email);
+    $nombre=$estudiante['nombre'];
+}
+
+if (isset($_GET[$nombre])) {
+    $correo_estudiante = $_GET[$nombre];
+    $sql = "SELECT * FROM estudiantes WHERE nombre = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $correo_estudiante);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows > 0) {
+        echo "<h2>Información del Estudiante:</h2>";
+        while ($row = $result->fetch_assoc()) {
+            echo "<p>Nombre: " . $row['nombre'] . "</p>";
+            echo "<p>Correo: " . $row['correo'] . "</p>";
+            // Añade otros campos según tu tabla
+        }
+    } else {
+        echo "<p>No se encontró ningún estudiante con ese nombre.</p>";
+    }
+    $stmt->close();
+} else {
+    echo "<p>Por favor, ingrese un nombre para buscar.</p>";
+}
+
+$conn->close();
+?>
