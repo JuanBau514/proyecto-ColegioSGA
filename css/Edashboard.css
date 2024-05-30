@@ -251,3 +251,18 @@ main {
 .centrado {
     text-align: center; 
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px 20px; /* Aumenta el valor de padding para más espacio */
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #f5f5f5;
+}

@@ -64,6 +64,11 @@ include '../../pages/Dashboard/profesorDs.php';
                                 <input type='text' id="telefono" name="telefono" value="<?php echo $profesor["telefono"]; ?>">
                             </p>
                         </div>
+                        <div>
+                            <p><span>Area: </span>
+                                <input type='text' id="area" name="area" value="<?php echo $profesor["area"]; ?>">
+                            </p>
+                        </div>
                         <div class="centrado">
                             <br><br> <button class="boton">Guardar</button>
                         </div>

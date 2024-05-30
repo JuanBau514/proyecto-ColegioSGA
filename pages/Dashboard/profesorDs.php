@@ -89,7 +89,7 @@ if (isset($_GET['profesor'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                    <a href="../../logic/profesor/contactarPadres.php?profesor=<?php echo $email;?>">
                             <span class="las la-user"></span>
                             <span>Contactar Padres</span>
                         </a>

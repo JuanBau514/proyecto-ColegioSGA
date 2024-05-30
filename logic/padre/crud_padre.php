@@ -50,5 +50,20 @@ class Crud_padre {
             return false;
         }
     }
+
+    public function obtenerTodos() {
+        $query = "SELECT * FROM padre";
+        $result = mysqli_query($this->conexion, $query);
+
+        $padres = [];
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $padres[] = $row;
+            }
+        }else {
+            return null;
+        }
+        return $padres;       
+    }
 }
 ?>

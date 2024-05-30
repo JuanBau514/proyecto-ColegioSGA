@@ -8,9 +8,10 @@ class Profesor {
     private $email;
     private $contrasena;
     private $telefono;
+    private $area;
 
     // Constructor
-    public function __construct($id, $nombre, $profesion, $edad, $email, $contrasena, $telefono) {
+    public function __construct($id, $nombre, $profesion, $edad, $email, $contrasena, $telefono,$area) {
         $this->id = $id;
         $this->nombre = $nombre;
         $this->profesion = $profesion;
@@ -18,6 +19,7 @@ class Profesor {
         $this->email = $email;
         $this->contrasena = $contrasena;
         $this->telefono=$telefono;
+        $this->area=$area;
     }
 
     // Métodos Get
@@ -46,6 +48,9 @@ class Profesor {
     public function getTelefono() {
         return $this->telefono;
     }
+    public function getArea() {
+        return $this->area;
+    }
 
     // Métodos Set
     public function setId($id) {
@@ -72,6 +77,9 @@ class Profesor {
     }
     public function setTelefono($telefono) {
         $this->telefono = $telefono;
+    }
+    public function setArea($area) {
+        $this->area = $area;
     }
 }
 ?>

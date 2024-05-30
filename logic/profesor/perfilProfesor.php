@@ -63,6 +63,11 @@ include '../../pages/Dashboard/profesorDs.php';
                             <?php echo $profesor["telefono"]; ?></h3>
                         </p>
                     </div>
+                    <div>
+                        <p><span>Area: </span>
+                            <?php echo $profesor["area"]; ?></h3>
+                        </p>
+                    </div>
                     <div class="centrado">
                         <br><br> <button class="boton" onclick="location.href='../../logic/profesor/editarProfe.php?profesor=<?php echo $email; ?>';">Editar</button>
                     </div>
