@@ -1,11 +1,11 @@
 <?php
- include("../../logic/estudiante/crud_e.php");
- include("../../config/db.php");
- session_start();
- $db = new DataBase();
- $crud_e= new Crud_e($db->connect());
+include("../../logic/estudiante/crud_e.php");
+include("../../config/db.php");
+session_start();
+$db = new DataBase();
+$crud_e = new Crud_e($db->connect());
 
- if (isset($_GET['estudiante'])) {
+if (isset($_GET['estudiante'])) {
     // Obtener el valor del parámetro 'email' y decodificarlo si es necesario
     $email = urldecode($_GET['estudiante']);
     $estudiante = $crud_e->obtenerEstudiante($email);
@@ -44,7 +44,7 @@
             <div class="sidebar-user">
                 <img src="../../sources/img/estudiante.jpg" alt="foto de perfil">
                 <div>
-                    <h3><?php echo $estudiante["nombre"];?></h3>
+                    <h3><?php echo $estudiante["nombre"]; ?></h3>
                     <span>Estudiante</span>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                 </div>
                 <ul>
                     <li>
-                    <a href="../../logic/estudiante/inicio.php?estudiante=<?php echo $email; ?>">
+                        <a href="../../logic/estudiante/inicio.php?estudiante=<?php echo $email; ?>" class="active">
                             <span class="las la-igloo"></span>
                             <span>Inicio</span>
                         </a>
@@ -65,7 +65,7 @@
                             <span class="las la-user"></span>
                             <span>Perfil</span>
                         </a>
-                    </li>                    
+                    </li>
                     <li>
                         <a href="../../index.php"><?php session_destroy() ?>
                             <span class="las la-sign-out-alt"></span>
@@ -78,19 +78,19 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="#">
+                    <a href="../../logic/estudiante/horarioEstudiante.php?estudiante=<?php echo $email; ?>">
                             <span class="las la-igloo"></span>
-                            <span> Horario</span>
+                            <span>Horario</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                    <a href="../../logic/estudiante/consultarTareas.php?estudiante=<?php echo $email; ?>">
                             <span class="las la-user"></span>
-                            <span>Tareas </span>
+                            <span>Tareas</span>
                         </a>
                     </li>
                     <li>
-                    <a href="../../logic/estudiante/notasEstudiante.php?estudiante=<?php echo $email;?>">
+                        <a href="../../logic/estudiante/notasEstudiante.php?estudiante=<?php echo $email; ?>">
                             <span class="las la-clipboard-list"></span>
                             <span>Notas</span>
                         </a>
@@ -102,7 +102,7 @@
                         </a>
                     </li>
                     <li>
-                    <a href="../../logic/estudiante/consultarProfe.php?estudiante=<?php echo $email;?>">
+                        <a href="../../logic/estudiante/consultarProfe.php?estudiante=<?php echo $email; ?>">
                             <span class="las la-user"></span>
                             <span>Consultar Profesores</span>
                         </a>
@@ -113,7 +113,6 @@
         </div>
     </div>
 
-    
     <script src="/logic/dashboard.js"></script>
 </body>
 

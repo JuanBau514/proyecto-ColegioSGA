@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $padre = $crud_pad->obtenerPadre($email);
 
         if($estudiante && $estudiante["contrasena"]=$contrasena){
-            header("Location: ../../pages/Dashboard/estudianteDs.php?estudiante=" .$email);
+            header("Location: ../../logic/estudiante/inicio.php?estudiante=" .$email);
             exit();
         }
         if($profesor && $profesor["contrasena"]=$contrasena){
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
         if($padre && $padre["contrasena"]=$contrasena){
-            header("Location: ../../pages/Dashboard/padresDs.php?padre=" .$email);
+            header("Location: ../../logic/padre/inicio.php?padre=" .$email);
             exit();
         }
        }
