@@ -95,6 +95,11 @@ if (isset($_GET['profesor'])) {
                         </a>
                     </li>
                     <li>
+                        <a href="../../logic/profesor/eventosProfesor.php?profesor=<?php echo $email; ?>">
+                            <span class="las la-calendar"></span>
+                            <span>Calendario de eventos</span>
+                        </a>
+                    <li>
                        <a href="../../logic/profesor/notasProfe.php?profesor=<?php echo $email; ?>">
                             <span class="las la-sign-out-alt"></span>
                             <span>Modificar notas</span>

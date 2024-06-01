@@ -96,7 +96,7 @@ if (isset($_GET['estudiante'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../..//logic/estudiante/eventosEstudiante.php?estudiante=<?php echo $email; ?>">
                             <span class="las la-clipboard-list"></span>
                             <span>Eventos</span>
                         </a>

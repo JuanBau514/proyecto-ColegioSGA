@@ -1,16 +1,9 @@
 <?php
 include("../../pages/Dashboard/profesorDs.php");
-include("../../config/pedrologin.php");
 include("../procesos/crudGrupos.php");
 
-// Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "usuario", "contraseña", "nombre_base_datos");
-if (!$conexion) {
-    die("Conexión fallida: " . mysqli_connect_error());
-}
-
 // Crear una instancia del CRUD
-$crud_g = new Crud_grupos($conexion);
+$crud_g = new Crud_grupos($db->connect());
 $grupos = $crud_g->obtenerTodos();
 ?>
 
