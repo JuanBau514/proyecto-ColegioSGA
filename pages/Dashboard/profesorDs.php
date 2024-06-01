@@ -78,7 +78,7 @@ if (isset($_GET['profesor'])) {
                 </div>
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="../../logic/profesor/gruposProfe.php?profesor=<?php echo $email;?>">
                             <span class="las la-user"></span>
                             <span>Consultar grupos</span>
                         </a>
