@@ -1,6 +1,5 @@
 <?php
 include("../../pages/Dashboard/estudianteDs.php");
-include("../../config/pedrologin.php");
 
 // Obtener el mes y el año actuales
 $month = date('m');
@@ -84,8 +83,8 @@ if ($prevMonth == 0) {
                 <span class="las la-sms"></span>
                 <img src="/sources/img/admin.png" width="30px" alt="foto de perfil">
                 <div class="info-p">
-                    <h4><?php echo $profesor["nombre"]; ?></h4>
-                    <small>Profesor</small>
+                    <h4><?php echo $estudiante["nombre"]; ?></h4>
+                    <small>Estudiante</small>
                 </div>
             </div>
         </header>

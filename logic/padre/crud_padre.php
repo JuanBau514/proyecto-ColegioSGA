@@ -51,6 +51,13 @@ class Crud_padre {
         }
     }
 
+    public function eliminarPadre($id) {
+        $query = "DELETE FROM padre WHERE id='$id'";
+        $result = mysqli_query($this->conexion, $query);
+
+        return $result;
+    }
+
     public function obtenerTodos() {
         $query = "SELECT * FROM padre";
         $result = mysqli_query($this->conexion, $query);
@@ -65,5 +72,23 @@ class Crud_padre {
         }
         return $padres;       
     }
+
+     // Esta función supone que existe una relación directa en la base de datos entre un padre y su estudiante
+     public function obtenerHorariosDelHijo($idPadre) {
+        $query = "SELECT h.Dia, h.Hora FROM horario h 
+                  INNER JOIN estudiante e ON h.idGrupo = e.idGrupo 
+                  INNER JOIN padre p ON e.id = p.idEstudiante 
+                  WHERE p.id = '$idPadre'";
+        $result = mysqli_query($this->conexion, $query);
+
+        $horarios = [];
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $horarios[] = $row;
+            }
+        }
+        return $horarios;
+    }
+
 }
 ?>

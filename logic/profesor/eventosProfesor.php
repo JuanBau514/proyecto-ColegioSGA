@@ -1,12 +1,12 @@
 <?php
 include("../../pages/Dashboard/profesorDs.php");
-include("../../config/pedrologin.php");
+
 include("../../logic/procesos/Crud_eventos.php");
-include("../../logic/procesos/crudGrupos.php");
+include("../../logic/grupos/vergrupos.php");
 
 
 // Crear una instancia del CRUD para eventos
-$crud_e = new Crud_eventos($conexion);
+$crud_e = new Crud_eventos($db->connect());
 $eventos = $crud_e->obtenerTodos();
 
 

@@ -1,21 +1,17 @@
 <?php
-include("../../logic/procesos/crudProfesor.php");
-include("../../logic/procesos/crud_horarios.php");
-include("../../config/db.php");
+include("../../pages/Dashboard/profesorDs.php");
+include("../../logic/horario/verhorario.php");
 
-session_start();
-$db = new DataBase();
-$crud_p = new Crud_profe($db->connect());
-$crud_h = new Crud_horario($db->connect());
+$crud_h = new Verhorario($db->connect());
 
 if (isset($_GET['profesor'])) {
-    $email = urldecode($_GET['profesor']);
-    $profesor = $crud_p->obtenerProfesor($email);
+
     $idProfesor = $profesor['id'];
     $horarios = $crud_h->obtenerHorariosPorProfesor($idProfesor);
 } else {
     $horarios = [];
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -23,28 +19,61 @@ if (isset($_GET['profesor'])) {
 <head>
     <meta charset="UTF-8">
     <title>Horario de Clases del Profesor</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+
 </head>
 <body>
-    <div id="calendar"></div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'timeGridWeek',
-                events: [
-                    <?php foreach ($horarios as $horario): ?>
-                    {
-                        title: 'Clase',
-                        start: '<?php echo date('Y-m-d\TH:i:s', strtotime($horario["Dia"] . ' ' . $horario["Hora"])); ?>',
-                        end: '<?php echo date('Y-m-d\TH:i:s', strtotime($horario["Dia"] . ' ' . date('H:i:s', strtotime('+1 hour', strtotime($horario["Hora"]))))); ?>'
-                    },
-                    <?php endforeach; ?>
-                ]
-            });
-            calendar.render();
-        });
-    </script>
+    <div class="main-content">
+        <header>
+            <div class="menu-toggle">
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+            </div>
+            <div class="header-icons foto-perfil">
+                <span class="las la-search"></span>
+                <span class="las la-bookmark"></span>
+                <span class="las la-sms"></span>
+                <img src="/sources/img/admin.png" width="30px" alt="foto de perfil">
+                <div class="info-p">
+                    <h4><?php echo $profesor["nombre"]; ?></h4>
+                    <small>Profesor</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <h1>Horario de Clases</h1>
+            <br>
+            <div class="page-header inicio">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Materia</th>
+                            <th>Grupo</th>
+                            <th>Día</th>
+                            <th>Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if ($horarios): ?>
+                            <?php foreach ($horarios as $horario): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($horario['materia']); ?></td>
+                                    <td><?php echo htmlspecialchars($horario['curso']); ?></td>
+                                    <td><?php echo htmlspecialchars($horario['dia']); ?></td>
+                                    <td><?php echo htmlspecialchars($horario['hora']); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="4">No hay horarios asignados.</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>    
+        </main>
+    </div>
+    <script src="/logic/dashboard.js"></script>
 </body>
 </html>

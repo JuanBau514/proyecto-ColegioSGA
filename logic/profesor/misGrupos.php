@@ -4,7 +4,11 @@ include("../../logic/grupos/vergrupos.php");
 
 // Crear una instancia del CRUD
 $crud_g = new Vergrupo($db->connect());
-$grupos = $crud_g->obtenerTodos();
+if (isset($_GET['profesor'])) {
+    $idProfesor = $profesor['id'];
+    
+    $misGrupos = $crud_g->obtenerGrupoProfe($idProfesor);
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,29 +38,22 @@ $grupos = $crud_g->obtenerTodos();
         </header>
 
         <main>
-            <h1>Información de Grupos</h1>
-            <br>
-            <div class="centrado">
-                <br> <button class="boton" onclick="location.href='../../logic/profesor/misGrupos.php?profesor=<?php echo $profesor['email']; ?>';">Ver mis grupos</button>
-            </div>
+            <h1>Información de mis Grupos</h1>
+            <br>            
             <div class="page-header inicio">
                 <table>
                     <thead>
                         <tr>
-                            <th>ID Grupo</th>
                             <th>Materia</th>
                             <th>Curso</th>
-                            <th>ID Profesor</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if ($grupos): ?>
-                            <?php foreach ($grupos as $grupo): ?>
+                        <?php if ($misGrupos): ?>
+                            <?php foreach ($misGrupos as $grupo): ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($grupo['idGrupo']); ?></td>
                                     <td><?php echo htmlspecialchars($grupo['materia']); ?></td>
                                     <td><?php echo htmlspecialchars($grupo['curso']); ?></td>
-                                    <td><?php echo htmlspecialchars($grupo['idProf']); ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>

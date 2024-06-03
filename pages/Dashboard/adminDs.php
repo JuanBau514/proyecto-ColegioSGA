@@ -1,3 +1,17 @@
+<?php
+include("../../logic/administrador/crud_admin.php");
+include("../../config/db.php");
+session_start();
+$db = new DataBase();
+$crud_a= new Crud_admin($db->connect());
+
+if (isset($_GET['admin'])) {
+    // Obtener el valor del parámetro 'email' y decodificarlo si es necesario
+    $email = urldecode($_GET['admin']);
+    $admin = $crud_a->obtenerAdmin($email);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,7 +44,7 @@
             <div class="sidebar-user">
                 <img src="/sources/img/admin.png" alt="foto de perfil">
                 <div>
-                    <h3>Nombre Aministrador</h3>
+                <h3><?php echo $admin["nombre"]; ?></h3>
                     <span>Administrador ._.</span>
                 </div>
             </div>
@@ -40,20 +54,20 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="#" class="active">
+                    <a href="../../logic/administrador/inicio.php?admin=<?php echo $email; ?>" class="active">
                             <span class="las la-igloo"></span>
                             <span>Inicio</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
+                    <a href="../../logic/administrador/perfilAdmin.php?admin=<?php echo $email; ?>">
                             <span class="las la-user"></span>
                             <span>Perfil</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                    <a href="../../index.php"><?php session_destroy() ?>
                             <span class="las la-sign-out-alt"></span>
                             <span>Cerrar Sesión</span>
                         </a>
@@ -64,9 +78,20 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="#">
+                    <a href="../../logic/administrador/gestionarProfe.php?admin=<?php echo $email; ?>">
                             <span class="las la-igloo"></span>
                             <span>Gestionar profesores</span>
+                        </a>
+                    </li>                   
+                    <a href="../../logic/administrador/gestionarEstu.php?admin=<?php echo $email; ?>">
+                            <span class="las la-clipboard-list"></span>
+                            <span>Gestionar estudiantes</span>
+                        </a>
+                    </li>
+                    <li>
+                    <a href="../../logic/administrador/gestionarPadre.php?admin=<?php echo $email; ?>">
+                            <span class="las la-user"></span>
+                            <span>Gestionar padres</span>
                         </a>
                     </li>
                     <li>
@@ -75,23 +100,6 @@
                             <span>Modificar planes de estudio</span>
                         </a>
                     <li>
-                        <a href="#">
-                            <span class="las la-clipboard-list"></span>
-                            <span>Gestionar estudiantes</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="las la-user"></span>
-                            <span>Gestionar padres</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="las la-sign-out-alt"></span>
-                            <span>Otorgar permisos </span>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -113,81 +121,13 @@
                 <span class="las la-sms"></span>
                 <img src="/sources/img/admin.png" width="30px" alt="foto de perfil">
                 <div class="info-p">
-                    <h4>Nombre Administrador</h4>
+                <h3><?php echo $admin["nombre"]; ?></h3>
                     <small>admin</small>
                 </div>
             </div>
 
         </header>
-
-        <main>
-            <div class="page-header inicio">
-                <div>
-                    <h1>Dashboard de administrativo del colegio</h1>
-                    <small>Inicio</small>
-                </div>
-                <div class="header-actions">
-                    <button>
-                        <span class="las la-bell"></span>
-                        Exportar
-                    </button>
-                    <button>
-                        <span class="las la-tools"></span>
-                        Configuración
-                    </button>
-                </div>
-            </div>
-            <div class="cards">
-                <div class="card-single">
-                    <div class="card-flex">
-                        <div class="card-info">
-                            <div class="card-head">
-                                <span>Profesores</span>
-                                <small>Profesores activos</small>
-                            </div>
-                            <h2>102</h2>
-                            <small>2% menos que el mes pasado :c</small>
-                        </div>
-                        <div class="card-chart danger">
-                            <span class="las la-chart-line"> </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div class="card-flex">
-                        <div class="card-info">
-                            <div class="card-head">
-                                <span>Estudiantes</span>
-                                <small>Estuantes Matriculados </small>
-                            </div>
-                            <h2>1240</h2>
-                            <small>23% más que el mes pasado</small>
-                        </div>
-                        <div class="card-chart success">
-                            <span class="las la-user-plus"> </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div class="card-flex">
-                        <div class="card-info">
-                            <div class="card-head">
-                                <span>Cursos entre 1 a 11 </span>
-                                <small>Cursos activos</small>
-                            </div>
-                            <h2>52</h2>
-                            <small>4% más que el mes pasado</small>
-                        </div>
-                        <div class="card-chart warning">
-                            <span class="las la-apple-alt"> </span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </main>
+       
     </div>
     <script src="/logic/dashboard.js"></script>
 </body>

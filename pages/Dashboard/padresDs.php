@@ -83,18 +83,18 @@ if (isset($_GET['padre'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                    <a href="../../logic/padre/eventosPadre.php?padre=<?php echo $email;?>">
                             <span class="las la-user"></span>
                             <span>Consultar eventos</span>
                         </a>
                     <li>
-                        <a href="#">
+                    <a href="../../logic/padre/consultarTrabajosHijo.php?padre=<?php echo $email;?>">
                             <span class="las la-clipboard-list"></span>
                             <span>Consultar Trabajos</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li>                        
+                        <a href="../../logic/padre/consultarNotasHijo.php?padre=<?php echo $email;?>">
                             <span class="las la-user"></span>
                             <span>Consultar notas</span>
                         </a>

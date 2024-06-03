@@ -45,6 +45,13 @@ class Crud_profe {
         }
     }
 
+    public function eliminarProfesor($id) {
+        $query = "DELETE FROM profesor WHERE id='$id'";
+        $result = mysqli_query($this->conexion, $query);
+
+        return $result;
+    }
+
     function obtenerTodos() {
         $query = "SELECT * FROM profesor";
         $result = mysqli_query($this->conexion, $query);
@@ -60,5 +67,19 @@ class Crud_profe {
         return $profesores;       
     }
 
+    public function obtenerHorariosPorProfesor($idProfesor) {
+        $query = "SELECT h.Dia, h.Hora FROM horario h 
+                  INNER JOIN profesor p ON h.idGrupo = p.idGrupo 
+                  WHERE p.id = '$idProfesor'";
+        $result = mysqli_query($this->conexion, $query);
+
+        $horarios = [];
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $horarios[] = $row;
+            }
+        }
+        return $horarios;
+    }
 }
 ?>

@@ -83,7 +83,7 @@ if (isset($_GET['profesor'])) {
                             <span>Consultar grupos</span>
                         </a>
                     <li>
-                         <a href="../../logic/profesor/Horarios.php?profesor=<?php echo $email;?>">
+                         <a href="../../logic/profesor/horarioProfesor.php?profesor=<?php echo $email;?>">
                             <span class="las la-clipboard-list"></span>
                             <span>Consultar horario</span>
                         </a>
@@ -99,12 +99,7 @@ if (isset($_GET['profesor'])) {
                             <span class="las la-calendar"></span>
                             <span>Calendario de eventos</span>
                         </a>
-                    <li>
-                       <a href="../../logic/profesor/notasProfe.php?profesor=<?php echo $email; ?>">
-                            <span class="las la-sign-out-alt"></span>
-                            <span>Modificar notas</span>
-                        </a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
